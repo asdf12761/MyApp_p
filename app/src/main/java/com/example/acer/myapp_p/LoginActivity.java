@@ -1,12 +1,11 @@
 package com.example.acer.myapp_p;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -26,4 +25,11 @@ public class LoginActivity extends AppCompatActivity {
         btn2=(Button)findViewById(R.id.btn_back);
     }
 
+    public void onLogin(View v) {
+
+    }
+
+    public void onBack(View v) {
+        finish();
+    }
 }
