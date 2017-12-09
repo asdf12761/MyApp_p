@@ -8,7 +8,7 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button button1,button2,button3;
+    Button button1,button3;
 
 
     @Override
@@ -16,17 +16,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         button1=(Button)findViewById(R.id.toselect);
-        button2=(Button)findViewById(R.id.toLogin);
         button3=(Button)findViewById(R.id.toabout);
 
-    }
-    public void onLogin(View v) {
-        Intent it = new Intent(MainActivity.this, LoginActivity.class);
-        startActivity(it);
     }
 
     public void onView(View v) {
         Intent it = new Intent(MainActivity.this, selectActivity.class);
         startActivity(it);
+    }
+
+    public void about(View v) {
+
     }
 }

@@ -22,7 +22,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".selectActivity" />
-        <activity android:name=".LoginActivity"></activity>
+        <activity android:name=".EditActivity" />
+        <activity android:name=".ListActivity" />
+        <activity android:name=".AddActivity" />
+        <activity android:name=".AboutActivity"></activity>
     </application>
 
 </manifest>
