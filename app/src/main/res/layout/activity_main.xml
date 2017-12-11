@@ -10,23 +10,35 @@
         android:id="@+id/toselect"
         android:layout_width="340dp"
         android:layout_height="60dp"
-        android:layout_marginTop="70dp"
         android:onClick="onView"
         android:text="進入管理頁面"
         android:textSize="25dp"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="16dp" />
+        android:layout_marginLeft="10dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="70dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
     <Button
         android:id="@+id/toabout"
         android:layout_width="340dp"
         android:layout_height="60dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="105dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="70dp"
         android:onClick="about"
         android:text="關於我們"
         android:textSize="25dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toselect" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="歡迎使用本服務!"
+        android:textSize="30dp"
+        android:layout_marginLeft="71dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="70dp" />
 
 </android.support.constraint.ConstraintLayout>
