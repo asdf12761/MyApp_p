@@ -21,14 +21,16 @@
         <activity android:name=".EditActivity" />
         <activity android:name=".ListActivity" />
         <activity android:name=".AddActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".AboutActivity" />
-        <activity android:name=".ListSetActivity" />
+        <activity android:name=".ListSetActivity">
+            <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
         <activity android:name=".ItenActivity"></activity>
     </application>
 

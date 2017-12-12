@@ -3,7 +3,7 @@
     <string name="title_activity_login">Sign in</string>
     <string name="input_ur_name">請輸入清單名稱</string>
     <string name="ok">確定</string>
-    <string name="hi">建立成功:</string>
+    <string name="hi">輸入清單名稱為:</string>
     <string name="cancal">取消</string>
 
 </resources>
