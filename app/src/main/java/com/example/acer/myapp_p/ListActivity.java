@@ -45,7 +45,7 @@ public class ListActivity extends AppCompatActivity implements AdapterView.OnIte
         SimpleCursorAdapter scAdapter = new SimpleCursorAdapter(
                 this,
                 R.layout.item_list_com, c,
-                new String[]{"商品名稱", "商品類型"},
+                new String[]{"商品名稱", "商品數量"},
                 new int[]{R.id.title, R.id.artist},
                 SimpleCursorAdapter.FLAG_REGISTER_CONTENT_OBSERVER);
         lv.setAdapter(scAdapter);

@@ -15,7 +15,7 @@ public class MyDB_com {
     private static final String TABLE_NAME = "Dental_Clinics";
     private static final String CREATE_TABLE = "CREATE TABLE IF NOT EXISTS "
             + TABLE_NAME + " ( `_id` INTEGER, `商品名稱` TEXT, `商品類型` TEXT, `商品售價` TEXT, " +
-            "`商品特價` TEXT, `商品單位` TEXT, PRIMARY KEY(`_id`) );";
+            "`商品特價` TEXT, `商品數量` TEXT, PRIMARY KEY(`_id`) );";
 
     private Context mCtx;
     private DataBaseOpenHelper helper;
@@ -57,7 +57,7 @@ public class MyDB_com {
     private static final String KEY_2 = "商品類型";
     private static final String KEY_3 = "商品售價";
     private static final String KEY_4 = "商品特價";
-    private static final String KEY_5 = "商品單位";
+    private static final String KEY_5 = "商品數量";
 
 
     String[] strCols = {KEY_ROWID, KEY_1,KEY_2,KEY_3,KEY_4,KEY_5};
