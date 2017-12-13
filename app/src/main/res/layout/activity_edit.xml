@@ -35,7 +35,7 @@
         android:layout_height="wrap_content"
         android:text="商品類型:"
         android:textSize="25dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="13dp"
         app:layout_constraintTop_toBottomOf="@+id/tv_name"
         android:layout_marginLeft="16dp"
         app:layout_constraintLeft_toLeftOf="parent" />
@@ -46,21 +46,10 @@
         android:layout_height="wrap_content"
         android:text="在庫狀況:"
         android:textSize="25dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="13dp"
         app:layout_constraintTop_toBottomOf="@+id/tv_type2"
         android:layout_marginLeft="16dp"
         app:layout_constraintLeft_toLeftOf="parent" />
-
-    <TextView
-        android:id="@+id/tv_about"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
-        android:text="商品說明:"
-        android:textSize="25dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_now" />
 
     <TextView
         android:id="@+id/tv_type2"
@@ -68,7 +57,7 @@
         android:layout_height="wrap_content"
         android:text="商品單位:"
         android:textSize="25dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="13dp"
         app:layout_constraintTop_toBottomOf="@+id/tv_sprice"
         android:layout_marginLeft="16dp"
         app:layout_constraintLeft_toLeftOf="parent" />
@@ -78,7 +67,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="13dp"
         android:text="商品特價:"
         android:textSize="25dp"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -89,7 +78,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="13dp"
         android:text="商品售價:"
         android:textSize="25dp"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -158,14 +147,15 @@
         android:id="@+id/rbt_off"
         android:layout_width="70dp"
         android:layout_height="32dp"
-        android:layout_marginLeft="13dp"
-        android:layout_marginRight="11dp"
+        android:layout_marginLeft="9dp"
+        android:layout_marginRight="12dp"
         android:text="缺貨"
         android:textSize="15dp"
-        app:layout_constraintHorizontal_bias="0.684"
+        app:layout_constraintHorizontal_bias="0.375"
         app:layout_constraintLeft_toRightOf="@+id/rbt_on"
         app:layout_constraintRight_toLeftOf="@+id/rbt_lod"
-        tools:layout_editor_absoluteY="259dp" />
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/et_type2" />
 
     <RadioButton
         android:id="@+id/rbt_lod"
@@ -183,11 +173,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
-        android:text="確認送出"
+        android:layout_marginTop="94dp"
+        android:text="確認建立"
         android:textSize="20dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginTop="112dp"
-        app:layout_constraintTop_toBottomOf="@+id/tv_about" />
+        app:layout_constraintTop_toBottomOf="@+id/button4" />
 
     <Button
         android:id="@+id/btn_rstart"
@@ -197,8 +187,8 @@
         android:text="重新填寫"
         android:textSize="20dp"
         app:layout_constraintLeft_toRightOf="@+id/btn_rcheck"
-        android:layout_marginTop="112dp"
-        app:layout_constraintTop_toBottomOf="@+id/tv_about" />
+        android:layout_marginTop="94dp"
+        app:layout_constraintTop_toBottomOf="@+id/button4" />
 
     <Button
         android:id="@+id/btn_back"
@@ -208,8 +198,29 @@
         android:text="返回選單"
         android:textSize="20dp"
         app:layout_constraintLeft_toRightOf="@+id/btn_rstart"
-        android:layout_marginTop="112dp"
-        app:layout_constraintTop_toBottomOf="@+id/tv_about" />
+        android:layout_marginTop="94dp"
+        app:layout_constraintTop_toBottomOf="@+id/button4" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="34dp"
+        android:text="商品圖片選擇"
+        android:textSize="20dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_now" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="177dp"
+        android:layout_height="129dp"
+        app:srcCompat="@android:drawable/ic_menu_report_image"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/rbt_off"
+        app:layout_constraintLeft_toRightOf="@+id/button4"
+        android:layout_marginLeft="9dp" />
 
 
 </android.support.constraint.ConstraintLayout>
