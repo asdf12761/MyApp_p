@@ -2,6 +2,7 @@ package com.example.acer.myapp_p;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.RadioButton;
 
@@ -22,6 +23,20 @@ public class AddActivity extends AppCompatActivity {
         type2=(EditText)findViewById(R.id.et_type2);
     }
 
+    public void pass(View v){
 
+    }
 
+    public void rstart(View v){
+        name.setText("");
+        type.setText("");
+        price.setText("");
+        sprice.setText("");
+        type2.setText("");
+
+    }
+
+    public void back(View v){
+        finish();
+    }
 }
