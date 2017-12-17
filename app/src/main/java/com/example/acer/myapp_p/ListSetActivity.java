@@ -14,7 +14,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.BaseAdapter;
+import android.widget.CursorTreeAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -28,14 +31,16 @@ public class ListSetActivity extends AppCompatActivity implements AdapterView.On
     private long rowId;
     private MyDB_List db ;
     private Cursor cursor;
-    ListView lv;
+    ListView l v;
     EditText et;
     private EditText editText1,et1;
     private String editString1,editString2;
+
     private int mNoteNumber = 1;
     protected static final int MENU_INSERT = Menu.FIRST;
     protected static final int MENU_DELETE = Menu.FIRST + 1;
     protected static final int MENU_UPDATE = Menu.FIRST + 2;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,9 +72,10 @@ public class ListSetActivity extends AppCompatActivity implements AdapterView.On
     }
 
     @Override
-    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+    public void onItemClick(AdapterView<?> parent, View view, int i, long id) {
         rowId = id;
         System.out.println("rowId = " + rowId);
+        Toast.makeText(this,"選擇了第" + rowId + "個清單",Toast.LENGTH_SHORT).show();
     }
 
 

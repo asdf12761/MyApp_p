@@ -3,4 +3,11 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <drawable name="darkgray">#808080FF</drawable>
+    <drawable name="white">#FFFFFFFF</drawable>
+    <drawable name="gray">#42b3b3b3</drawable>
+    <drawable name="silver">#00ffffff</drawable>   <!-- 透明色 -->
+    <drawable name="darkgray2">#80e5e5ff</drawable>
+    <drawable name="colorAccent2">#b1f27ba3</drawable>
+    <drawable name="list_selector_color">#a305c5ff</drawable>
 </resources>
