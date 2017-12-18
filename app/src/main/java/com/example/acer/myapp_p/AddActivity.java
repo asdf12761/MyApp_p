@@ -7,7 +7,10 @@ import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.RadioButton;
 
+import com.example.acer.myapp_p.data.comList;
+
 public class AddActivity extends AppCompatActivity {
+
     private RadioButton on,off,lod;
     EditText name,type,price,sprice,type2;
     @Override
@@ -41,8 +44,17 @@ public class AddActivity extends AppCompatActivity {
         }
     };
 
-    public void pass(View v){
 
+
+    public void pass(View v){
+        EditText ed1 = (EditText) findViewById(R.id.et_name);
+        EditText ed2 = (EditText) findViewById(R.id.et_type);
+        EditText ed3 = (EditText) findViewById(R.id.et_price);
+        EditText ed4 = (EditText) findViewById(R.id.et_sprice);
+        EditText ed5 = (EditText) findViewById(R.id.et_type2);
+        ListActivity.t.add(new comList(ed1.getText().toString(), ed2.getText().toString(), ed3.getText().toString(),ed4.getText().toString(),
+                ed5.getText().toString()));
+        finish();
     }
 
     public void rstart(View v){
@@ -57,4 +69,4 @@ public class AddActivity extends AppCompatActivity {
     public void back(View v){
         finish();
     }
-}
+    }

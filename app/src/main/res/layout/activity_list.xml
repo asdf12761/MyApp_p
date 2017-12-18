@@ -6,8 +6,13 @@
     android:layout_height="match_parent"
     tools:context="com.example.acer.myapp_p.ListActivity">
 
-    <ListView
-        android:id="@+id/listView"
+    <!--<android.support.v7.widget.RecyclerView-->
+        <!--android:id="@+id/myRecyclerView"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent" />-->
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/myRecyclerView"
         android:layout_width="350dp"
         android:layout_height="440dp"
         android:layout_marginLeft="8dp"

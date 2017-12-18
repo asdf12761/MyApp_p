@@ -9,6 +9,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 
+
 public class MyDB_com {
     private final static String DATABASE_NAME = "com.db";
     private static final int DATABASE_VERSION = 2;
@@ -33,6 +34,7 @@ public class MyDB_com {
         db = helper.getReadableDatabase();
         return this;
     }
+
 
     private class DataBaseOpenHelper extends SQLiteOpenHelper {
 
@@ -80,18 +82,18 @@ public class MyDB_com {
         return mCursor;
     }
 
-    public long create(String name,String type ,String price ,String sprice ,String type2) {
+    public long create(String rname,String rtype,String rprice,String rsprice,String rtype2) {
         ContentValues args = new ContentValues();
-        args.put(KEY_1, name);
-        args.put(KEY_2, type);
-        args.put(KEY_3, price);
-        args.put(KEY_4, sprice);
-        args.put(KEY_5, type2);
-        Log.d("mylog","add："+ name);
-        Log.d("mylog","add："+ type);
-        Log.d("mylog","add："+ price);
-        Log.d("mylog","add："+ sprice);
-        Log.d("mylog","add："+ type2);
+        args.put(KEY_1, rname);
+        args.put(KEY_2, rtype);
+        args.put(KEY_3, rprice);
+        args.put(KEY_4, rsprice);
+        args.put(KEY_5, rtype2);
+        Log.d("mylog","add："+ rname);
+        Log.d("mylog","add："+ rtype);
+        Log.d("mylog","add："+ rprice);
+        Log.d("mylog","add："+ rsprice);
+        Log.d("mylog","add："+ rtype2);
 
 //        args.put(KEY_NOTE, noteName);
 //        args.put(KEY_CREATED, now.getTime());
@@ -102,19 +104,19 @@ public class MyDB_com {
         return db.delete(TABLE_NAME, KEY_ROWID + "=" + rowId, null) > 0;
     }
 
-    public boolean update(long rowId, String name,String type ,String price ,String sprice ,String type2) {
+    public boolean update(long rowId, String rname,String rtype ,String rprice ,String rsprice ,String rtype2) {
         ContentValues args = new ContentValues();
-        args.put(KEY_1,name);
-        args.put(KEY_2, type);
-        args.put(KEY_3, price);
-        args.put(KEY_4, sprice);
-        args.put(KEY_5, type2);
+        args.put(KEY_1, rname);
+        args.put(KEY_2, rtype);
+        args.put(KEY_3, rprice);
+        args.put(KEY_4, rsprice);
+        args.put(KEY_5, rtype2);
         Log.d("mylog","updata："+ rowId);
-        Log.d("mylog","updata："+ name);
-        Log.d("mylog","add："+ type);
-        Log.d("mylog","add："+ price);
-        Log.d("mylog","add："+ sprice);
-        Log.d("mylog","add："+ type2);
+        Log.d("mylog","updata："+ rname);
+        Log.d("mylog","add："+ rtype);
+        Log.d("mylog","add："+ rprice);
+        Log.d("mylog","add："+ rsprice);
+        Log.d("mylog","add："+ rtype2);
         return db.update(TABLE_NAME, args, KEY_ROWID + "=" + rowId, null) > 0;
     }
 }
