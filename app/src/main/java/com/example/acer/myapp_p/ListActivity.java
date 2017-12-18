@@ -1,7 +1,9 @@
 package com.example.acer.myapp_p;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -11,14 +13,18 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Toast;
 
 import com.example.acer.myapp_p.data.DAOType;
 import com.example.acer.myapp_p.data.OnCloudReceivedListener;
+import com.example.acer.myapp_p.data.comList;
 import com.example.acer.myapp_p.data.comListDAO;
 import com.example.acer.myapp_p.data.comLostDAOFactory;
 
 public class ListActivity extends AppCompatActivity implements RecyclerView.OnItemTouchListener
         , OnCloudReceivedListener {
+
+    private long rowId;
     public static comListDAO t;
     final DAOType type = DAOType.CLOUD;
     RecyclerView mRecyclerView;
@@ -26,18 +32,23 @@ public class ListActivity extends AppCompatActivity implements RecyclerView.OnIt
     RecyclerView.LayoutManager mLayoutManager;
     GestureDetector mGD;
     final String TAG = "CloudImpl";
+    int id;
+    protected static final int MENU_INSERT = Menu.FIRST;
+    protected static final int MENU_DELETE = Menu.FIRST + 1;
+    protected static final int MENU_UPDATE = Menu.FIRST + 2;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
         t = comLostDAOFactory.getStudentDAO(type, this);
+        id = getIntent().getIntExtra("id", -1);
         mRecyclerView = (RecyclerView) findViewById(R.id.myRecyclerView);
         mRecyclerView.setHasFixedSize(false);
         mLayoutManager = new LinearLayoutManager(ListActivity.this);
         mRecyclerView.setLayoutManager(mLayoutManager);
-        mGD = new GestureDetector(this, new GestureDetector.SimpleOnGestureListener()
-        {
+        mGD = new GestureDetector(this, new GestureDetector.SimpleOnGestureListener() {
             @Override
             public boolean onSingleTapUp(MotionEvent e) {
                 return true;
@@ -59,16 +70,34 @@ public class ListActivity extends AppCompatActivity implements RecyclerView.OnIt
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        menu.add("ADD");
+        menu.add(0, MENU_INSERT, 0, "新增清單")
+                .setIcon(android.R.drawable.ic_menu_add)
+                .setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
+        menu.add(0, MENU_DELETE, 0, "刪除清單")
+                .setIcon(android.R.drawable.ic_menu_delete)
+                .setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
+        menu.add(0, MENU_UPDATE, 0, "修改清單")
+                .setIcon(android.R.drawable.ic_menu_edit)
+                .setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
         return super.onCreateOptionsMenu(menu);
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        Intent it = new Intent(ListActivity.this, AddActivity.class);
-        startActivity(it);
+        switch (item.getItemId()) {
+            case MENU_INSERT:
+                Intent it = new Intent(ListActivity.this, AddActivity.class);
+                startActivity(it);
+                break;
+            case MENU_UPDATE:
+                it = new Intent(ListActivity.this, EditActivity.class);
+                it.putExtra("id", id);
+                startActivity(it);
+                break;
+        }
         return super.onOptionsItemSelected(item);
     }
+
     @Override
     public boolean onInterceptTouchEvent(RecyclerView rv, MotionEvent e) {
         View v = rv.findChildViewUnder(e.getX(), e.getY());

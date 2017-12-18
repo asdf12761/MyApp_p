@@ -169,10 +169,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="6dp"
+        android:layout_marginTop="80dp"
+        android:onClick="Update"
         android:text="確認修改"
         android:textSize="20dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginTop="80dp"
         app:layout_constraintTop_toBottomOf="@+id/button4" />
 
     <Button
@@ -180,10 +181,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
+        android:layout_marginTop="80dp"
+        android:onClick="rstart"
         android:text="重新填寫"
         android:textSize="20dp"
         app:layout_constraintLeft_toRightOf="@+id/btn_rcheck"
-        android:layout_marginTop="80dp"
         app:layout_constraintTop_toBottomOf="@+id/button4" />
 
     <Button
@@ -191,10 +193,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
+        android:layout_marginTop="80dp"
+        android:onClick="back"
         android:text="返回選單"
         android:textSize="20dp"
         app:layout_constraintLeft_toRightOf="@+id/btn_rstart"
-        android:layout_marginTop="80dp"
         app:layout_constraintTop_toBottomOf="@+id/button4" />
 
     <Button

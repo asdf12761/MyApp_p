@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/white"
     tools:context="com.example.acer.myapp_p.ListActivity">
 
     <!--<android.support.v7.widget.RecyclerView-->
@@ -24,8 +25,10 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
+        android:choiceMode="singleChoice"
         android:layout_marginBottom="8dp"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0"
+        android:listSelector="@drawable/list_selector_color"/>
 
     <TextView
         android:id="@+id/textView4"
