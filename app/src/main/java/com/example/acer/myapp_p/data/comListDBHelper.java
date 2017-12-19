@@ -20,7 +20,7 @@ public class comListDBHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         String sql = "CREATE  TABLE \"main\".\"com\" (\"_id\" INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL ," +
-                " \"商品名稱\" VARCHAR, \"商品類型\" VARCHAR, \"商品售價\" VARCHAR)";
+                " \"商品名稱\" VARCHAR, \"商品類型\" VARCHAR, \"商品售價\" VARCHAR, \"comNow\" VARCHAR, \"img\" VARCHAR)";
         db.execSQL(sql);
     }
 

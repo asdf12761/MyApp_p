@@ -30,19 +30,21 @@ public class comListDAODBImpl implements comListDAO {
         cv.put("rprice", s.商品售價);
         cv.put("rsprice", s.商品特價);
         cv.put("rtype2", s.商品數量);
+        cv.put("comNows", s.comNow);
+        cv.put("imgurl", s.img);
         db.insert("com", null, cv);
     }
 
     @Override
     public comList[] getData() {
         ArrayList<comList> tmpList = new ArrayList<>();
-        Cursor c = db.query("com", new String[] {"_id", "rname", "rtype", "rprice","rsprice","rtype2"}, null, null, null, null ,null);
+        Cursor c = db.query("com", new String[] {"_id", "rname", "rtype", "rprice","rsprice","rtype2","comNows","imgurl"}, null, null, null, null ,null);
         if (c.moveToFirst())
         {
-            tmpList.add(new comList(c.getInt(0), c.getString(1), c.getString(2), c.getString(3),c.getString(4),c.getString(5)));
+            tmpList.add(new comList(c.getInt(0), c.getString(1), c.getString(2), c.getString(3),c.getString(4),c.getString(5),c.getString(6),c.getString(7)));
             while(c.moveToNext())
             {
-                tmpList.add(new comList(c.getInt(0), c.getString(1), c.getString(2), c.getString(3),c.getString(4),c.getString(5)));
+                tmpList.add(new comList(c.getInt(0), c.getString(1), c.getString(2), c.getString(3),c.getString(4),c.getString(5),c.getString(6),c.getString(7)));
             }
         }
         return tmpList.toArray(new comList[tmpList.size()]);
@@ -56,6 +58,8 @@ public class comListDAODBImpl implements comListDAO {
         cv.put("rprice", s.商品售價);
         cv.put("rsprice", s.商品特價);
         cv.put("rtype2", s.商品數量);
+        cv.put("comNows", s.comNow);
+        cv.put("imgurl", s.img);
         db.update("com", cv, "_id=?", new String[] {String.valueOf(s.id)});
     }
 
@@ -71,10 +75,10 @@ public class comListDAODBImpl implements comListDAO {
 
     @Override
     public comList getOneStudent(int id) {
-        Cursor c = db.query("com", new String[] {"_id", "rname", "rtype", "rprice","rsprice","rtype2"}, "_id=?", new String[] {String.valueOf(id)}, null, null ,null);
+        Cursor c = db.query("com", new String[] {"_id", "rname", "rtype", "rprice","rsprice","rtype2","comNows","imgurl"}, "_id=?", new String[] {String.valueOf(id)}, null, null ,null);
         if (c.moveToFirst())
         {
-            comList s = new comList(c.getInt(0), c.getString(1), c.getString(2), c.getString(3),c.getString(4),c.getString(5));
+            comList s = new comList(c.getInt(0), c.getString(1), c.getString(2), c.getString(3),c.getString(4),c.getString(5),c.getString(6),c.getString(7));
             return s;
         }
         return null;

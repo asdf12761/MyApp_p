@@ -103,6 +103,8 @@ public class comListDAOFileImpl implements comListDAO {
                 tmp.商品售價 = s.商品售價;
                 tmp.商品特價 = s.商品特價;
                 tmp.商品數量 = s.商品數量;
+                tmp.comNow = s.comNow;
+                tmp.img = s.img;
             }
         }
         saveData();

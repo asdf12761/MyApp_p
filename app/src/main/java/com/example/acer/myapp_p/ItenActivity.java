@@ -1,13 +1,20 @@
 package com.example.acer.myapp_p;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.example.acer.myapp_p.data.comList;
 
 public class ItenActivity extends AppCompatActivity {
 
+    protected static final int MENU_UPDATE = Menu.FIRST;
+    protected static final int MENU_DELETE = Menu.FIRST + 1;
     TextView tv1,tv2,tv3,tv4,tv5,tv6;
     comList stu;
     int id;
@@ -34,6 +41,46 @@ public class ItenActivity extends AppCompatActivity {
         tv3.setText(stu.商品售價);
         tv4.setText(stu.商品特價);
         tv5.setText(stu.商品數量);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        menu.add(0, MENU_UPDATE, 0, "修改清單")
+                .setIcon(android.R.drawable.ic_menu_edit)
+                .setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
+        menu.add(0, MENU_DELETE, 0, "刪除清單")
+                .setIcon(android.R.drawable.ic_menu_delete)
+                .setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
+
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case MENU_UPDATE:
+                Intent it = new Intent(ItenActivity.this, EditActivity.class);
+                it.putExtra("id", id);
+                startActivity(it);
+                break;
+            case MENU_DELETE:
+                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                builder.setMessage(R.string.delele_confirm);
+                builder.setNeutralButton(R.string.okay, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        ListActivity.t.delete(stu);
+                        finish();
+                    }
+                });
+                builder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                });
+                builder.show();
+        }
+        return super.onOptionsItemSelected(item);
     }
 
 }

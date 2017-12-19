@@ -169,6 +169,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="34dp"
+        android:onClick="select"
         android:text="商品圖片選擇"
         android:textSize="20dp"
         app:layout_constraintLeft_toLeftOf="parent"

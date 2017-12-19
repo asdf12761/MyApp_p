@@ -1,9 +1,7 @@
 package com.example.acer.myapp_p;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -13,13 +11,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.Toast;
 
 import com.example.acer.myapp_p.data.DAOType;
 import com.example.acer.myapp_p.data.OnCloudReceivedListener;
-import com.example.acer.myapp_p.data.comList;
 import com.example.acer.myapp_p.data.comListDAO;
 import com.example.acer.myapp_p.data.comLostDAOFactory;
+
 
 public class ListActivity extends AppCompatActivity implements RecyclerView.OnItemTouchListener
         , OnCloudReceivedListener {
@@ -30,7 +27,7 @@ public class ListActivity extends AppCompatActivity implements RecyclerView.OnIt
     RecyclerView mRecyclerView;
     RecyclerView.Adapter<MyAdapter.ViewHolder> mAdapter;
     RecyclerView.LayoutManager mLayoutManager;
-    GestureDetector mGD;
+    private GestureDetector mGD;
     final String TAG = "CloudImpl";
     int id;
     protected static final int MENU_INSERT = Menu.FIRST;
@@ -47,13 +44,14 @@ public class ListActivity extends AppCompatActivity implements RecyclerView.OnIt
         mRecyclerView = (RecyclerView) findViewById(R.id.myRecyclerView);
         mRecyclerView.setHasFixedSize(false);
         mLayoutManager = new LinearLayoutManager(ListActivity.this);
+
         mRecyclerView.setLayoutManager(mLayoutManager);
-        mGD = new GestureDetector(this, new GestureDetector.SimpleOnGestureListener() {
+        mGD = new GestureDetector(this, new GestureDetector.SimpleOnGestureListener()
+        {
             @Override
             public boolean onSingleTapUp(MotionEvent e) {
                 return true;
             }
-
         }
         );
         mRecyclerView.addOnItemTouchListener(this);
@@ -102,11 +100,10 @@ public class ListActivity extends AppCompatActivity implements RecyclerView.OnIt
     public boolean onInterceptTouchEvent(RecyclerView rv, MotionEvent e) {
         View v = rv.findChildViewUnder(e.getX(), e.getY());
         Log.d("Touch", "onInterceptTouchEvent");
-        if (mGD.onTouchEvent(e))
-        {
+        if (mGD.onTouchEvent(e)) {
             Log.d("Touch", "Single Tap up");
             int position = rv.getChildLayoutPosition(v);
-            // Toast.makeText(MainActivity.this, "posi:" + position, Toast.LENGTH_SHORT).show();
+//             Toast.makeText(ListActivity.this, "選擇了第" + position + "個商品", Toast.LENGTH_SHORT).show();
             if (position >= 0)
             {
                 Intent it = new Intent(ListActivity.this, ItenActivity.class);
@@ -114,25 +111,32 @@ public class ListActivity extends AppCompatActivity implements RecyclerView.OnIt
                 startActivity(it);
             }
         }
-        return false;
+            return false;
     }
 
     @Override
     public void onTouchEvent(RecyclerView rv, MotionEvent e) {
 
     }
-
     @Override
     public void onRequestDisallowInterceptTouchEvent(boolean disallowIntercept) {
 
     }
-
     @Override
     public void onReceivedEvent() {
         mAdapter = new MyAdapter(ListActivity.this, t.getData());
         mRecyclerView.setAdapter(mAdapter);
     }
+
+//    private View.OnTouchListener onTouchView = new View.OnTouchListener() {
+//        @Override
+//        public boolean onTouch(View v, MotionEvent event) {
+//            Log.d(">>>", "onTouch");
+//            return mGD.onTouchEvent(event);
+//        }
+//    };
 }
+
 
 
 //    private void setAdapter() {
