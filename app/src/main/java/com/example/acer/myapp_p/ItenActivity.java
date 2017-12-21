@@ -15,7 +15,7 @@ public class ItenActivity extends AppCompatActivity {
 
     protected static final int MENU_UPDATE = Menu.FIRST;
     protected static final int MENU_DELETE = Menu.FIRST + 1;
-    TextView tv1,tv2,tv3,tv4,tv5,tv6;
+    TextView tv1,tv2,tv3,tv4,tv5,tv6,tv7;
     comList stu;
     int id;
     @Override
@@ -28,6 +28,7 @@ public class ItenActivity extends AppCompatActivity {
         tv4 =(TextView) findViewById(R.id.tv_sprice_i);
         tv5 =(TextView) findViewById(R.id.tv_rtype2_i);
         tv6 = (TextView) findViewById(R.id.tv_id);
+        tv7 =(TextView) findViewById(R.id.tv_comNow_i);
         id = getIntent().getIntExtra("id", -1);
     }
 
@@ -41,6 +42,8 @@ public class ItenActivity extends AppCompatActivity {
         tv3.setText(stu.商品售價);
         tv4.setText(stu.商品特價);
         tv5.setText(stu.商品數量);
+        tv7.setText(stu.comNow);
+
     }
 
     @Override

@@ -1,21 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/Rlayout"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
     android:padding="5dip">
-    <LinearLayout android:id="@+id/thumbnail"
+
+    <LinearLayout
+        android:id="@+id/thumbnail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="3dip"
         android:layout_alignParentLeft="true"
-        android:layout_marginRight="5dip">
+        android:layout_marginRight="5dip"
+        android:padding="3dip">
 
         <ImageView
             android:id="@+id/list_image"
             android:layout_width="50dip"
             android:layout_height="50dip"
-            android:src="@drawable/rihanna"/>
+            android:src="@drawable/rihanna" />
 
     </LinearLayout>
 
@@ -37,15 +40,15 @@
         android:id="@+id/artist"
         android:layout_width="220dp"
         android:layout_height="wrap_content"
-        android:text="類型"
-        android:textColor="#343434"
-        android:textSize="15dip"
-        android:layout_marginLeft="11dp"
-        android:layout_marginStart="11dp"
         android:layout_alignBaseline="@+id/textView6"
         android:layout_alignBottom="@+id/textView6"
+        android:layout_marginLeft="11dp"
+        android:layout_marginStart="11dp"
+        android:layout_toEndOf="@+id/textView6"
         android:layout_toRightOf="@+id/textView6"
-        android:layout_toEndOf="@+id/textView6" />
+        android:text="類型"
+        android:textColor="#343434"
+        android:textSize="15dip" />
 
     <!-- Rightend Duration -->
 
@@ -54,20 +57,51 @@
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="20dip"
-        android:textStyle="normal"
+        android:layout_below="@+id/title"
+        android:layout_toEndOf="@+id/thumbnail"
+        android:layout_toRightOf="@+id/thumbnail"
         android:text="數量:"
         android:textColor="#040404"
-        android:typeface="sans"
-        android:layout_below="@+id/title"
-        android:layout_toRightOf="@+id/thumbnail"
-        android:layout_toEndOf="@+id/thumbnail" />
+        android:textSize="20dip"
+        android:textStyle="normal"
+        android:typeface="sans" />
 
-    <ImageView android:layout_width="15dip"
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="15dip"
         android:layout_height="15dip"
-        android:src="@drawable/arrow"
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
-        android:id="@+id/imageView" />
+        android:src="@drawable/arrow" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="51dp"
+        android:layout_marginStart="51dp"
+        android:textSize="20dip"
+        android:textColor="#040404"
+        android:text="狀況:"
+        android:textStyle="normal"
+        android:typeface="sans"
+        android:layout_alignBaseline="@+id/artist"
+        android:layout_alignBottom="@+id/artist"
+        android:layout_toRightOf="@+id/title"
+        android:layout_toEndOf="@+id/title" />
+
+    <TextView
+        android:id="@+id/now"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/artist"
+        android:layout_alignBottom="@+id/artist"
+        android:layout_marginLeft="23dp"
+        android:layout_marginStart="23dp"
+        android:layout_toEndOf="@+id/textView9"
+        android:layout_toRightOf="@+id/textView9"
+        android:text="在庫"
+        android:textColor="#343434"
+        android:textSize="15dip" />
 
 </RelativeLayout>

@@ -32,6 +32,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     public void onBindViewHolder(ViewHolder holder, int position) {
         holder.title.setText(data[position].商品名稱);
         holder.artist.setText(data[position].商品數量);
+        holder.now.setText(data[position].comNow);
     }
 
     @Override
@@ -41,11 +42,12 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
     static class ViewHolder extends RecyclerView.ViewHolder
     {
-        TextView title,artist;
+        TextView title,artist,now;
         public ViewHolder(View itemView) {
             super(itemView);
             title = (TextView) itemView.findViewById(R.id.title);
             artist = (TextView) itemView.findViewById(R.id.artist);
+            now = (TextView) itemView.findViewById(R.id.now);
         }
     }
 }

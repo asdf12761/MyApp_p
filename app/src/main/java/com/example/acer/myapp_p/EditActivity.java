@@ -6,6 +6,8 @@ import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.TextView;
 
 import com.example.acer.myapp_p.data.comList;
 
@@ -14,6 +16,8 @@ public class EditActivity extends AppCompatActivity {
     int id;
     comList com;
     EditText et1,et2,et3,et4,et5;
+    TextView tv;
+    RadioGroup RG;
     private RadioButton on,off,lod;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +28,8 @@ public class EditActivity extends AppCompatActivity {
         et3 = (EditText) findViewById(R.id.et_price);
         et4 = (EditText) findViewById(R.id.et_sprice);
         et5 = (EditText) findViewById(R.id.et_type2);
+        tv = (TextView) findViewById(R.id.textView13);
+        RG=(RadioGroup) findViewById(R.id.radioGroup);
         on=(RadioButton)findViewById(R.id.rbt_on);
         off=(RadioButton)findViewById(R.id.rbt_off);
         lod=(RadioButton)findViewById(R.id.rbt_lod);
@@ -34,6 +40,8 @@ public class EditActivity extends AppCompatActivity {
         et3.setText(com.商品售價);
         et4.setText(com.商品特價);
         et5.setText(com.商品數量);
+        tv.setText(com.comNow);
+
         on.setOnCheckedChangeListener(mOnCheckedChangeListener);
         off.setOnCheckedChangeListener(mOnCheckedChangeListener);
         lod.setOnCheckedChangeListener(mOnCheckedChangeListener);
@@ -45,16 +53,27 @@ public class EditActivity extends AppCompatActivity {
         public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
             switch (buttonView.getId()) {
                 case R.id.rbt_on:
-                    comNow = on.getText().toString();
+                    if(on.isChecked()){
+                        comNow = on.getText().toString();
+                    }else{
+                    }
                     break;
                 case R.id.rbt_off:
-                    comNow = off.getText().toString();
+                    if(off.isChecked()){
+                        comNow = off.getText().toString();
+                    }else{
+                    }
                     break;
                 case R.id.rbt_lod:
-                    comNow = lod.getText().toString();
+                    if(lod.isChecked()){
+                        comNow = lod.getText().toString();
+                    }else{
+                    }
                     break;
             }
+            tv.setText(comNow);
         }
+
     };
 
     public void Update(View v){
@@ -63,6 +82,7 @@ public class EditActivity extends AppCompatActivity {
         com.商品售價 = et3.getText().toString();
         com.商品特價 = et4.getText().toString();
         com.商品數量 = et5.getText().toString();
+        comNow = tv.getText().toString();
         ListActivity.t.update(com);
         finish();
     }
