@@ -6,4 +6,14 @@
     android:layout_height="match_parent"
     tools:context="com.example.acer.myapp_p.AboutActivity">
 
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="368dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="這是我的第一個作品，尚有許多未完成及需要改進的空間，未來也會陸續新增和修正，請多指教！"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </android.support.constraint.ConstraintLayout>

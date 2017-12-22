@@ -72,7 +72,7 @@ public class ListSetActivity extends AppCompatActivity implements AdapterView.On
     public void onItemClick(AdapterView<?> parent, View view, int i, long id) {
         rowId = id;
         System.out.println("rowId = " + rowId);
-        Toast.makeText(this,"選擇了第" + rowId + "個清單",Toast.LENGTH_SHORT).show();
+        Toast.makeText(this,"選擇了第" + rowId + "個清單,可以進行清單名稱修改",Toast.LENGTH_SHORT).show();
     }
 
 

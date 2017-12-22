@@ -6,6 +6,9 @@
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.READ_PROFILE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <meta-data
+        android:name="android.app.default_searchable"
+        android:value=".selectActivity" />
 
     <application
         android:allowBackup="true"
@@ -15,7 +18,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity android:name=".selectActivity" />
         <activity android:name=".EditActivity" />
@@ -25,13 +32,12 @@
         </activity>
         <activity android:name=".AboutActivity" />
         <activity android:name=".ListSetActivity">
-            <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
         </activity>
         <activity android:name=".ItenActivity"></activity>
+        <meta-data
+            android:name="android.app.searchable"
+            android:resource="@layout/searchable"/>
     </application>
 
 </manifest>

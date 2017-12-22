@@ -74,9 +74,9 @@ public class ListActivity extends AppCompatActivity implements RecyclerView.OnIt
         menu.add(0, MENU_DELETE, 0, "刪除清單")
                 .setIcon(android.R.drawable.ic_menu_delete)
                 .setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
-        menu.add(0, MENU_UPDATE, 0, "修改清單")
-                .setIcon(android.R.drawable.ic_menu_edit)
-                .setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
+//        menu.add(0, MENU_UPDATE, 0, "修改清單")
+//                .setIcon(android.R.drawable.ic_menu_edit)
+//                .setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
         return super.onCreateOptionsMenu(menu);
     }
 

@@ -17,4 +17,6 @@
     <string name="cancel">取消</string>
     <string name="check">確認視窗</string>
     <string name="exit_confirm">確定要結束應用程式嗎?</string>
+    <string name="search_title">搜尋標題</string>
+    <string name="search_hint">提示</string>
 </resources>
